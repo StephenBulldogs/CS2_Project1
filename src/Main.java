@@ -1,3 +1,7 @@
+/**
+ *
+ *
+ */
 import java.util.Scanner;
 
 public class Main{
@@ -47,6 +51,10 @@ public class Main{
 
     }
 
+    /**
+     *
+     *
+     */
     public static void handleCheckIn(Scanner scanner, Reservation reservation) {
 
         System.out.println(reservation.toString());
@@ -61,6 +69,10 @@ public class Main{
         }
     }
 
+    /**
+     *
+     *
+     */
     public static void handleCheckOut(Scanner scanner, Reservation reservation) {
 
         System.out.println(reservation.toString());

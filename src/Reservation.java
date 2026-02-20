@@ -1,3 +1,8 @@
+/**
+ *
+ *
+ */
+
 public class Reservation {
     private Guest guest;
     private int nights;
@@ -6,6 +11,10 @@ public class Reservation {
     private Room room;
     private boolean checkedIn;
 
+    /**
+     *
+     *
+     */
     public Reservation() {
         guest = new Guest();
         room = new Room();
@@ -15,6 +24,10 @@ public class Reservation {
         checkedIn = false;
     }
 
+    /**
+     *
+     *
+     */
     public Reservation(Guest guest, Room room, int nights) {
         this.guest = guest;
         this.room = room;
@@ -24,26 +37,50 @@ public class Reservation {
         checkedIn = false;
     }
 
+    /**
+     *
+     *
+     */
     public Guest getGuest() {
         return guest;
     }
 
+    /**
+     *
+     *
+     */
     public void setGuest(Guest guest) {
         this.guest = guest;
     }
 
+    /**
+     *
+     *
+     */
     public Room getRoom() {
         return room;
     }
 
+    /**
+     *
+     *
+     */
     public void setRoom(Room room) {
         this.room = room;
     }
 
+    /**
+     *
+     *
+     */
     public Amenity[] getAmenities() {
         return amenities;
     }
 
+    /**
+     *
+     *
+     */
     public void setAmenities(Amenity[] amenities) {
         this.amenities = amenities;
     }
@@ -56,34 +93,62 @@ public class Reservation {
 //        this.amenityCount = amenityCount;
 //    }
 
+    /**
+     *
+     *
+     */
     public int getNights() {
         return nights;
     }
 
+    /**
+     *
+     *
+     */
     public void setNights(int nights) {
         this.nights = nights;
     }
 
+    /**
+     *
+     *
+     */
     public boolean isCheckedIn() {
         return checkedIn;
     }
 
+    /**
+     *
+     *
+     */
     public void setCheckedIn(boolean checkedIn) {
         this.checkedIn = checkedIn;
     }
 
+    /**
+     *
+     *
+     */
     public void checkIn() {
         if (!checkedIn) {
             checkedIn = true;
         }
     }
 
+    /**
+     *
+     *
+     */
     public void checkOut() {
         if (checkedIn) {
             checkedIn = false;
         }
     }
 
+    /**
+     *
+     *
+     */
     public void addAmenity(Amenity amenity) {
         if (checkedIn && amenityCount < amenities.length) {
             amenities[amenityCount] = amenity;
@@ -91,6 +156,10 @@ public class Reservation {
         }
     }
 
+    /**
+     *
+     *
+     */
     public double calculateTotal() {
         double total = nights * room.getRoomPricePerNight();
         for (int i = 0; i < amenityCount; i++) {
@@ -99,6 +168,10 @@ public class Reservation {
         return total;
     }
 
+    /**
+     *
+     *
+     */
     public void printBill() {
         if (checkedIn) {
             System.out.println("Guest must check out before billing.");
@@ -122,6 +195,10 @@ public class Reservation {
         System.out.println();
     }
 
+    /**
+     *
+     *
+     */
     @Override
     public String toString() {
         return guest.toString() + ", " + room.toString();
