@@ -1,5 +1,7 @@
 /**
  * Represents a hotel room with a room number, type, and nightly price.
+ *
+ *@author Stephen Schwender
  */
 public class Room {
     private int roomNum;
@@ -86,7 +88,7 @@ public class Room {
     /**
      * Returns a string with the room number and type.
      *
-     * @return a string representation of the room
+     * @return a string of the room
      */
     @Override
     public String toString() {

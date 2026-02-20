@@ -44,7 +44,7 @@ public class Guest {
     /**
      * Returns a string with the guest's name.
      *
-     * @return a string representation of the guest
+     * @return a string of the guest
      */
     @Override
     public String toString() {
