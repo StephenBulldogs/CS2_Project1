@@ -6,7 +6,7 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main() {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -22,22 +22,22 @@ public class Main {
             System.out.println("Check in guests? (y/n): ");
             String input = scanner.nextLine();
             if (input.equalsIgnoreCase("y")) {
-                if (res1.isCheckedIn() == false) {
+                if (!res1.isCheckedIn()) {
                     handleCheckIn(scanner, res1);
                 }
 
-                if (res2.isCheckedIn() == false) {
+                if (!res2.isCheckedIn()) {
                     handleCheckIn(scanner, res2);
                 }
             } else {
                 System.out.println("Check out guests? (y/n): ");
                 input = scanner.nextLine();
                 if (input.equalsIgnoreCase("y")) {
-                    if (res1.isCheckedIn() == true) {
+                    if (res1.isCheckedIn()) {
                         handleCheckOut(scanner, res1);
                     }
 
-                    if (res2.isCheckedIn() == true) {
+                    if (res2.isCheckedIn()) {
                         handleCheckOut(scanner, res2);
                     }
                 } else {
