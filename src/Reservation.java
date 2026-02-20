@@ -1,8 +1,9 @@
 /**
+ * Represents a hotel reservation linking a guest to a room.
+ * Tracks check-in status and any amenities added during the stay.
  *
- *
+ *@author Stephen Schwender
  */
-
 public class Reservation {
     private Guest guest;
     private int nights;
@@ -12,8 +13,7 @@ public class Reservation {
     private boolean checkedIn;
 
     /**
-     *
-     *
+     * Default constructor.
      */
     public Reservation() {
         guest = new Guest();
@@ -25,8 +25,12 @@ public class Reservation {
     }
 
     /**
+     * Constructor with Arguments for Reservation()
+     * Creates a reservation with guest, room, and number of nights.
      *
-     *
+     * @param guest the guest making the reservation
+     * @param room the room being reserved
+     * @param nights the number of nights for the stay
      */
     public Reservation(Guest guest, Room room, int nights) {
         this.guest = guest;
@@ -38,48 +42,54 @@ public class Reservation {
     }
 
     /**
+     * Returns the guest for with this reservation.
      *
-     *
+     * @return the guest
      */
     public Guest getGuest() {
         return guest;
     }
 
     /**
+     * Sets the guest for this reservation.
      *
-     *
+     * @param guest the guest to set
      */
     public void setGuest(Guest guest) {
         this.guest = guest;
     }
 
     /**
+     * Returns the room for with this reservation.
      *
-     *
+     * @return the room
      */
     public Room getRoom() {
         return room;
     }
 
     /**
+     * Sets the room for this reservation.
      *
-     *
+     * @param room the room to set
      */
     public void setRoom(Room room) {
         this.room = room;
     }
 
     /**
+     * Returns the array of amenities added to this reservation.
      *
-     *
+     * @return the amenities array
      */
     public Amenity[] getAmenities() {
         return amenities;
     }
 
     /**
+     * Sets the amenities array for this reservation.
      *
-     *
+     * @param amenities the amenities array to set
      */
     public void setAmenities(Amenity[] amenities) {
         this.amenities = amenities;
@@ -94,40 +104,43 @@ public class Reservation {
 //    }
 
     /**
+     * Returns the number of nights for this reservation.
      *
-     *
+     * @return the number of nights
      */
     public int getNights() {
         return nights;
     }
 
     /**
+     * Sets the number of nights for this reservation.
      *
-     *
+     * @param nights the number of nights to set
      */
     public void setNights(int nights) {
         this.nights = nights;
     }
 
     /**
+     * Returns if the guest is currently checked in.
      *
-     *
+     * @return true if checked in, false otherwise
      */
     public boolean isCheckedIn() {
         return checkedIn;
     }
 
     /**
+     * Sets the check in status of this reservation.
      *
-     *
+     * @param checkedIn true to mark as checked in, false otherwise
      */
     public void setCheckedIn(boolean checkedIn) {
         this.checkedIn = checkedIn;
     }
 
     /**
-     *
-     *
+     * Checks the guest in if they are not already checked in.
      */
     public void checkIn() {
         if (!checkedIn) {
@@ -136,8 +149,7 @@ public class Reservation {
     }
 
     /**
-     *
-     *
+     * Checks the guest out if they are currently checked in.
      */
     public void checkOut() {
         if (checkedIn) {
@@ -146,8 +158,9 @@ public class Reservation {
     }
 
     /**
+     * Adds an amenity to the reservation.
      *
-     *
+     * @param amenity the amenity to add
      */
     public void addAmenity(Amenity amenity) {
         if (checkedIn && amenityCount < amenities.length) {
@@ -157,8 +170,9 @@ public class Reservation {
     }
 
     /**
+     * Calculates the total cost of the stay.
      *
-     *
+     * @return the total amount due
      */
     public double calculateTotal() {
         double total = nights * room.getRoomPricePerNight();
@@ -169,8 +183,7 @@ public class Reservation {
     }
 
     /**
-     *
-     *
+     * Prints an itemized bill for the reservation.
      */
     public void printBill() {
         if (checkedIn) {
@@ -196,8 +209,9 @@ public class Reservation {
     }
 
     /**
+     * Returns a string with the guest and room details for this reservation.
      *
-     *
+     * @return a string of the reservation
      */
     @Override
     public String toString() {
