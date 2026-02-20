@@ -1,20 +1,21 @@
 /**
+ * Manages check in and check out for reservations.
  *
- *
+ *@author Stephen Schwender
  */
 import java.util.Scanner;
 
-public class Main{
+public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
         Guest g1 = new Guest("Lucifer");
-        Room r1 = new Room(666,"Lava Pit Suite", 150.00);
+        Room r1 = new Room(666, "Lava Pit Suite", 150.00);
         Reservation res1 = new Reservation(g1, r1, 3);
 
         Guest g2 = new Guest("Waldo");
-        Room r2 = new Room(404,"King Room", 120.00);
+        Room r2 = new Room(404, "King Room", 120.00);
         Reservation res2 = new Reservation(g2, r2, 2);
 
         while (true) {
@@ -48,12 +49,13 @@ public class Main{
                 }
             }
         }
-
     }
 
     /**
+     * Handles the check-in process for a reservation.
      *
-     *
+     * @param scanner     the Scanner used for user input
+     * @param reservation the reservation to check in
      */
     public static void handleCheckIn(Scanner scanner, Reservation reservation) {
 
@@ -70,8 +72,10 @@ public class Main{
     }
 
     /**
+     * Handles the checkout process for a reservation.
      *
-     *
+     * @param scanner     the Scanner used for user input
+     * @param reservation the reservation to check out
      */
     public static void handleCheckOut(Scanner scanner, Reservation reservation) {
 
